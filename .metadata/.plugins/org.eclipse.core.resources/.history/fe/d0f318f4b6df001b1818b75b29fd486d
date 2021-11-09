@@ -1,0 +1,21 @@
+// 이름 : 김선효
+// 학번 : 1812515
+// 날짜 : 21. 7. 8.
+// 문제번호 : 실습 2
+// 문제설명 : 그래픽 그리기
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class DrawGraphic {
+	
+	public DrawGraphic() {
+		super("그래픽 그리기");
+	}
+	public static void main(String[] args) {
+		new DrawGraphic();
+
+	}
+
+}

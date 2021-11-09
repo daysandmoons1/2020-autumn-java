@@ -1,0 +1,42 @@
+// 이름 : 김선효
+// 학번 : 1812515
+// 날짜 : 21. 7. 8.
+// 문제번호 : 실습 2
+// 문제설명 : 그래픽 그리기
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class DrawGraphic extends JFrame {
+	
+	public DrawGraphic() {
+		setTitle("Menu 만들기 예제");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		Container c = getContentPane();
+		c.setLayout(new BorderLayout());
+		
+		c.add(new DrawPanel());
+		
+		setSize(500,500);
+		setVisible(true);
+	}
+	
+	class DrawPanel extends JPanel {
+		// 메뉴바 생성
+		private JMenuBar mb = new JMenuBar();
+		
+		// 파일 메뉴 생성
+		private JToolBar tBAR = new JToolBar("Menu");
+		public DrawPanel() {
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		new DrawGraphic();
+
+	}
+
+}

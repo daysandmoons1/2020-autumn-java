@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class twoDArray {
+	
+	static int[] makeArray() {
+		int temp[][] = new int[4][4];
+		for(int i=0; i<temp.length; i++) {
+			for(int j=0; j<temp[i].length; j++) {
+				temp[i][j] = 0;
+			}
+		}
+	}
+	
+	static 
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		int intArray[][];
+		intArray = makeArray();
+		
+		int i, j, k, random;
+		
+		while(true) {
+			i = 4 - (int)(Math.random()*4 + 1);
+			j = 4 - (int)(Math.random()*4 + 1);
+			random = (int)(Math.random()*10 + 1);
+			
+			if(intArray[i][j] != 0) {
+				intArray[i][j] = random;
+				k++;
+			}
+			
+			if(k>=10) {
+				break;
+			}
+		}
+		
+		for(i=0; i<4; i++) {
+			for(j=0; j<4; j++) {
+				System.out.println(intArray[i][j] + "	");
+			}
+			System.out.print("\n");
+		}
+		scanner.close();
+	}
+
+}

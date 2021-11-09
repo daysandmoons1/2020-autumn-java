@@ -1,0 +1,63 @@
+// 이름 : 김선효
+// 학번 : 1812515
+// 날짜 : 21. 7. 8.
+// 문제번호 : 실습 2
+// 문제설명 : 그래픽 그리기
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class DrawGraphic extends JFrame {
+	
+	public DrawGraphic() {
+		setTitle("Menu 만들기 예제");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		Container c = getContentPane();
+		c.setLayout(new BorderLayout());
+		
+		c.add(new DrawPanel(), BorderLayout.CENTER);
+		
+		setSize(500,500);
+		setVisible(true);
+	}
+	
+	class DrawPanel extends JPanel {
+		// 툴바 생성
+		private JToolBar tBar = new JToolBar("Menu");
+		
+		// 툴바 컴포넌트 생성
+		private JButton [] graphicBtn = new JButton[4];
+		private String [] types = {"line", "tri", "rect", "cir"};
+		
+		public DrawPanel() {
+			for(int i=0; i<types.length; i++) {
+				graphicBtn[i] = new JButton(types[i]);
+				graphicBtn[i].addActionListener(new MyDrawListener());
+				tBar.add(graphicBtn[i]);
+			}
+			add(tBar);
+		}
+		
+		class MyDrawListener implements ActionListener{
+			public void actionPerformed(ActionEvent e) {
+				if(e.getActionCommand() == "line") {
+					System.out.println("line");
+				}else if(e.getActionCommand() == "tri") {
+					System.out.println("tri");
+				}else if(e.getActionCommand() == "rect") {
+					System.out.println("rect");
+				}else if(e.getActionCommand() == "cir") {
+					System.out.println("cir");
+				}
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		new DrawGraphic();
+
+	}
+
+}
